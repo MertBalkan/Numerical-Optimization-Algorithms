@@ -2,17 +2,6 @@ import numpy as np
 import math
 from example_function import f, gradient
 
-
-def f(x):
-    f = 3 + (x[0] - 1.5 * x[1]) ** 2 + (x[1] - 2) ** 2
-    return f
-
-
-def g(x):
-    g = np.array([2 * (x[0] - 1.5 * x[1]), -3 * (x[0] - 1.5 * x[1]) + (2 * (x[1] - 2))])
-    return g
-
-
 # this function is using in golden section method.
 def golden_section_f(sk, xk, pk):
     result = f(xk + sk * pk)
