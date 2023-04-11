@@ -24,7 +24,7 @@ def golden_section(xk, pk):
     f2 = golden_section_f(s2, xk, pk)
 
     while abs(s1 - s2) > ds:
-        k += 1
+        k = 0
         if f1 > f2:
             salt = 1 * s1
             s1 = 1 * s2

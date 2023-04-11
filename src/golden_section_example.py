@@ -2,9 +2,8 @@ import math
 import numpy as np
 
 
-def f(x, p, s):
-    x = x + s * p
-    f = 3 + (x[0] - 1.5 * x[1]) ** 2 + (x[1] - 2) ** 2
+def f(x):
+    f = 3 + (x - 1.5 * x) ** 2 + (x - 2) ** 2
     return f
 
 

@@ -19,7 +19,7 @@ def GSf(sk, xk, pk):
     return sonuc
 
 
-def GS(xk, pk):  # golden section
+def GS(xk, pk, k=None):  # golden section
     salt = 0;
     sust = 1
     ds = 0.0001
@@ -68,7 +68,7 @@ C3 = True;
 C4 = True;
 prevp = -gradient(xk)
 prevg = gradient(xk)
-print('k:', k, 'x1:', format(xk[0], 'f'), 'x2:', format(xk[1], 'f'), 'f', format(fk, 'f'))
+print('k:', k, 'x1:', format(xk[0], 'f'), 'x2:', format(xk[1], 'f'), 'f', format(f(xk), 'f'))
 
 while C1 & C2 & C3 & C4:
     if k == 0:
@@ -79,11 +79,11 @@ while C1 & C2 & C3 & C4:
         prevp = 1 * pk
         prevg = 1 * gradient(xk)
     k += 1
-    sk = GS(xk, pk)
+    sk = GS(xk, pk, 0)
     xk = xk + sk * pk
     x1.append(xk[0])
     x2.append(xk[1])
-    print('k:', k, 'x1:', format(xk[0], 'f'), 'x2:', format(xk[1], 'f'), 'f', format(fk, 'f'))
+    print('k:', k, 'x1:', format(xk[0], 'f'), 'x2:', format(xk[1], 'f'), 'f', format(f(xk), 'f'))
 
     C1 = k < MaxIter
     C2 = epsilon1 < abs(f(xk) - f(xk + sk * pk))

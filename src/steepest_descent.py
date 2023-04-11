@@ -57,7 +57,7 @@ x = np.array([x1, x2])
 # using golden section method for finding s value.
 for i in range(0, 100):
     p = -g(x)
-    #s = golden_section(x, p, 0, 1, 0.0001)
+    s = golden_section(x, p, 0, 1, 0.0001)
     s = 0.2
     x = x + s * p
     print(i, x[0], x[1], f(x))
