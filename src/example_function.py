@@ -5,7 +5,8 @@ import math
 def f(xk):
     x1 = xk[0]
     x2 = xk[1]
-    fk = 3 + (x1 - 1.5 * x2) ** 2 + (x2 - 2) ** 2
+    x3 = xk[2]
+    fk = (x1 - 2 * x2 + x3 - 1) ** 2 + (-x1 + x2 - x3 + 3) ** 2 + (2*x1 + x2 - x3) ** 2
     return fk
 
 
