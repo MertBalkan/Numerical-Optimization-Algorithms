@@ -2,6 +2,9 @@ import numpy as np
 import math
 from example_function import f, gradient
 
+
+
+
 # this function is using in golden section method.
 def golden_section_f(sk, xk, pk):
     result = f(xk + sk * pk)
@@ -24,7 +27,7 @@ def golden_section(xk, pk):
     f2 = golden_section_f(s2, xk, pk)
 
     while abs(s1 - s2) > ds:
-        k = 0
+        k += 1
         if f1 > f2:
             salt = 1 * s1
             s1 = 1 * s2
@@ -43,7 +46,7 @@ def golden_section(xk, pk):
 
 
 # sonlandırma kriterleri-------
-MaxIter = 500
+MaxIter = 5000
 epsilon1 = 1e-9
 epsilon2 = 1e-9
 epsilon3 = 1e-9
